@@ -164,7 +164,7 @@ return [
         Spatie\Permission\PermissionServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
         Nexmo\Laravel\NexmoServiceProvider::class,
-
+        Collective\Html\HtmlServiceProvider::class,
         /*
          * Package Service Providers...
          */
@@ -234,7 +234,8 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
         'Nexmo' => Nexmo\Laravel\Facade\Nexmo::class,
-
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
     ],
 
 ];

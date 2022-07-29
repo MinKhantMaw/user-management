@@ -13,7 +13,7 @@
                     </ul>
                  </div>
                 @endif
-                <form action="{{ route('user.store') }}" method="POST">
+                {!! Form::open(array('route' => 'user.store','method' => 'POST')) !!}
                     @csrf
                    <div class="card mt-2">
                         <div class="card-header">
@@ -38,12 +38,16 @@
                                     <input type="password" name="confirm_password" class="form-control" placeholder="Confirm Password">
                                 </div>
                                 <div class="form-group">
+                                    <strong>Role:</strong>
+                                    {!! Form::select('roles[]', $roles,[], array('class' => 'custom-select')) !!}
+                                </div>
+                                <div class="form-group">
                                     <input type="submit" class="btn btn-primary mt-1" value="Create">
                                 </div>
                             </div>
                         </div>
                    </div>
-                </form>
+                {!! Form::close() !!}
             </div>
         </div>
     </div>

@@ -10,6 +10,8 @@ use Maatwebsite\Excel\Concerns\WithEvents;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\ShouldAutoSize;
+use Maatwebsite\Excel\Concerns\WithColumnFormatting;
+use PhpOffice\PhpSpreadsheet\Style\NumberFormat;
 
 class Export implements FromCollection, WithHeadings, WithEvents, WithTitle,ShouldAutoSize
 {
@@ -64,12 +66,12 @@ class Export implements FromCollection, WithHeadings, WithEvents, WithTitle,Shou
         ];
     }
 
-    // public function columnFromats(): array
-    // {
-    //     return [
-    //         'G' => NumberFormat::FORMAT_NUMBER,
-    //     ];
-    // }
+    public function columnFromats(): array
+    {
+        return [
+            'G' => NumberFormat::FORMAT_NUMBER,
+        ];
+    }
 
     public function title(): string
     {
